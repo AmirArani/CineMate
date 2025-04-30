@@ -8,7 +8,6 @@
 .history
 
 
-
 # Flutter repo-specific
 /bin/cache/
 /bin/internal/bootstrap.bat
@@ -110,6 +109,14 @@ coverage/
 # Symbols
 app.*.symbols
 
+# IDE specific
+.idea/
+.vscode/
+*.iml
+.project
+.classpath
+.settings/
+
 # Exceptions to above rules.
 !**/ios/**/default.mode1v3
 !**/ios/**/default.mode2v3
@@ -117,3 +124,4 @@ app.*.symbols
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 !/dev/ci/**/Gemfile.lock
+
