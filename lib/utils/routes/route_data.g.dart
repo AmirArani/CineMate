@@ -254,7 +254,7 @@ extension $RatingScreenRouteDataExtension on RatingScreenRouteData {
 
 extension $ListsScreenRouteDataExtension on ListsScreenRouteData {
   static ListsScreenRouteData _fromState(GoRouterState state) => ListsScreenRouteData(
-        refreshKey: _$convertMapValue('refresh-key', state.uri.queryParameters, int.parse),
+        refreshKey: _$convertMapValue('refresh-key', state.uri.queryParameters, int.tryParse),
       );
 
   String get location => GoRouteData.$location(
@@ -275,7 +275,7 @@ extension $ListsScreenRouteDataExtension on ListsScreenRouteData {
 
 extension $ListDetailScreenRouteDataExtension on ListDetailScreenRouteData {
   static ListDetailScreenRouteData _fromState(GoRouterState state) => ListDetailScreenRouteData(
-        id: int.parse(state.pathParameters['id']!),
+        id: int.parse(state.pathParameters['id']!)!,
       );
 
   String get location => GoRouteData.$location(
@@ -309,7 +309,7 @@ extension $LoginCallBackRouteDataExtension on LoginCallBackRouteData {
 
 extension $MovieDetailRouteDataExtension on MovieDetailRouteData {
   static MovieDetailRouteData _fromState(GoRouterState state) => MovieDetailRouteData(
-        id: int.parse(state.pathParameters['id']!),
+        id: int.parse(state.pathParameters['id']!)!,
         posterPath: state.uri.queryParameters['poster-path'],
         cat: state.uri.queryParameters['cat'],
       );
@@ -333,7 +333,7 @@ extension $MovieDetailRouteDataExtension on MovieDetailRouteData {
 
 extension $TvShowDetailRouteDataExtension on TvShowDetailRouteData {
   static TvShowDetailRouteData _fromState(GoRouterState state) => TvShowDetailRouteData(
-        id: int.parse(state.pathParameters['id']!),
+        id: int.parse(state.pathParameters['id']!)!,
         posterPath: state.uri.queryParameters['poster-path'],
         cat: state.uri.queryParameters['cat'],
       );
@@ -357,7 +357,7 @@ extension $TvShowDetailRouteDataExtension on TvShowDetailRouteData {
 
 extension $PersonDetailRouteDataExtension on PersonDetailRouteData {
   static PersonDetailRouteData _fromState(GoRouterState state) => PersonDetailRouteData(
-        id: int.parse(state.pathParameters['id']!),
+        id: int.parse(state.pathParameters['id']!)!,
         name: state.uri.queryParameters['name']!,
         profilePath: state.uri.queryParameters['profile-path'],
         knownForDepartment: state.uri.queryParameters['known-for-department']!,
@@ -386,7 +386,7 @@ extension $PersonDetailRouteDataExtension on PersonDetailRouteData {
 T? _$convertMapValue<T>(
   String key,
   Map<String, String> map,
-  T Function(String) converter,
+  T? Function(String) converter,
 ) {
   final value = map[key];
   return value == null ? null : converter(value);
