@@ -184,8 +184,8 @@ class _TvShowScreenState extends State<TvShowScreen> with SingleTickerProviderSt
                   // Movie Action Bar
                   Positioned(
                     height: 60,
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    bottom: 10,
+                    width: MediaQuery.sizeOf(context).width * 0.9,
+                    bottom: 10 + MediaQuery.viewPaddingOf(context).bottom,
                     left: MediaQuery.of(context).size.width * 0.05,
                     child: _ActionBar(showId: widget.showId),
                   ),

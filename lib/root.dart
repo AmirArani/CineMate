@@ -119,8 +119,8 @@ class _RootScreenState extends State<RootScreen> {
             ),
             Positioned(
                 height: 60,
-                width: MediaQuery.of(context).size.width * 0.9,
-                bottom: 10,
+                width: MediaQuery.sizeOf(context).width * 0.9,
+                bottom: 10 + MediaQuery.viewPaddingOf(context).bottom,
                 child: SizedBox(
                   height: 40,
                   child: _ButtonNavigation(
