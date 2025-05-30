@@ -1,0 +1,5 @@
+CineMate is a free and open-source TMDb client.
+
+It allows you to explore movies and TV shows, browse by genres, view cast and crew details, and more.
+
+It aims to be a lightweight and privacy-respecting alternative to IMDb.

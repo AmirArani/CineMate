@@ -1,0 +1,3 @@
+Initial release of CineMate!
+- Browse movies and TV shows
+- View cast and crew info
